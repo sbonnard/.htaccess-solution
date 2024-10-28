@@ -6,3 +6,9 @@ RewriteRule ^([^.]+)$ $1.html [NC,L]
 ErrorDocument 403 /errors/403.html
 
 ErrorDocument 404 /errors/404.html
+
+# DENY ACCESS TO SENSITIVE FILES
+<Files .env>
+    Order Allow,Deny
+    Deny from all
+</Files>
